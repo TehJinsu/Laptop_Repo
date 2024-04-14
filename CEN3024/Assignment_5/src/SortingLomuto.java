@@ -11,10 +11,11 @@ public class SortingLomuto {
 		
 		Random rand = new Random();
 		
+		int numOfNums = rand.nextInt(9000000) + 1000000;
 		try {
 			PrintWriter writer = new PrintWriter("millionsofnumbers.txt");
 			
-			for (int i = 0; i < 1000000; i++) {
+			for (int i = 0; i < numOfNums; i++) {
 				writer.println(rand.nextInt(10000000));
 			}
 		} catch (FileNotFoundException e) {
@@ -51,7 +52,7 @@ public class SortingLomuto {
 		quickSort(nums, 0, length -1);
 		
 		long endTime = System.currentTimeMillis();
-		System.out.println("Lomuto sort took " + (endTime - startTime) + " milliseconds");
+		System.out.println("Lomuto sort took " + (endTime - startTime) + " milliseconds with " + numOfNums + " words");
 	}
 
 static void Swap (ArrayList<String> numsList,int pos1, int pos2) {
